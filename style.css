@@ -22,3 +22,5 @@ table {
     background: #dcdcdc;
   }
   header {text-align: center;}
+
+  footer {text-align: end;}
