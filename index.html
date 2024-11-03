@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
   <title>Salary Calculator</title>
 </head>
+
 <body>
   <header>
     <h1>Salary Calculator</h1>
@@ -13,53 +15,32 @@
   <main>
     <h2>Add Employee:</h2>
     <form>
-  <input 
-  id="firstName"
-  placeholder="First Name"
-    type="text"
-    data-testid="firstNameInput">
-    <input 
-      id="lastName"
-    placeholder="Last Name"
-    type="text"
-    data-testid="lastNameInput">
-    <input 
-    id="Number"
-    placeholder="ID"
-    type="text"
-    data-testid="idInput">
-    <input
-    id="jobTitle"
-    placeholder="Title"
-    type="text"
-    data-testid="titleInput">
-    <input 
-      id="Income"
-    placeholder="Annual Salary"
-    type="text"
-    data-testid="annualSalaryInput"
-    >
+      <input id="firstName" name="firstName" placeholder="First Name" type="text" data-testid="firstNameInput">
+      <input id="lastName" placeholder="Last Name" type="text" data-testid="lastNameInput">
+      <input id="Number" placeholder="ID" type="text" data-testid="idInput">
+      <input id="jobTitle" placeholder="Title" type="text" data-testid="titleInput">
+      <input id="Income" placeholder="Annual Salary" type="text" data-testid="annualSalaryInput">
+      <input type="submit" data-testid="submitButton" />
     </form>
-    <form>
-    <button 
-    type = "submit" onClick="addTheEmployee()" data-testid = "submitButton"> Submit</button>
-   </form>
     <h2>Employees</h2>
     <table>
       <thead>
         <tr>
-<th>First Name</th>
-<th>Last Name</th>
-<th>ID</th>
-<th>Title</th>
-<th>Salary</th>
-<th></th>
-</tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Salary</th>
+          <th></th>
+        </tr>
       </thead>
+      <tbody id="tableBody"> 
+      </tbody>
     </table>
   </main>
   <footer>
     <p>Total Monthly:</p>
   </footer>
 </body>
+
 </html>
