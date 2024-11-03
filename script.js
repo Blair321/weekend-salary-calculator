@@ -7,9 +7,9 @@ function onReady() {
 
 const firstName = document.querySelector('#firstName');
 //create function to add first name on click
-function getFirstname() {
-    console.log('First employee name', firstName);
-    firstName = document.querySelector('#firstName')
-    firstName.innerHTML += '<button onClick="submitButton(event)"></Button>'
+// We actually want to create a function that add all the values inside the table 
+
+
+
     
-}
+
