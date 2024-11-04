@@ -39,12 +39,23 @@ document.addEventListener("submit", (event) => {
   salaryCell.innerText = salary.value;
   salaryCell.value = salary.value;
 
+  const removeCell = document.createElement("td");
+
+  const button = document.createElement("button");
+  button.innerText = "Delete";
+  button.onclick = () => {
+    employeeRow.remove();
+  }
+  
+  removeCell.appendChild(button);
+
+
   employeeRow.appendChild(firstNameCell);
   employeeRow.appendChild(lastNameCell);
   employeeRow.appendChild(idCell);
   employeeRow.appendChild(jobTitleCell);
   employeeRow.appendChild(salaryCell);
-  employeeRow.appendChild(document.createElement("td"));
+  employeeRow.appendChild(removeCell);
   tableBody.appendChild(employeeRow);
 
   const monthlyCost = document.getElementById("total");
