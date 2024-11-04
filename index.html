@@ -19,7 +19,7 @@
       <input id="lastName" placeholder="Last Name" type="text" data-testid="lastNameInput">
       <input id="Number" placeholder="ID" type="text" data-testid="idInput">
       <input id="jobTitle" placeholder="Title" type="text" data-testid="titleInput">
-      <input id="Income" placeholder="Annual Salary" type="text" data-testid="annualSalaryInput">
+      <input id="Income" placeholder="Annual Salary" type="number" data-testid="annualSalaryInput">
       <input type="submit" data-testid="submitButton" />
     </form>
     <h2>Employees</h2>
@@ -39,7 +39,9 @@
     </table>
   </main>
   <footer>
-    <p>Total Monthly:</p>
+    <p>Total Monthly:&nbsp;
+      $<span id="total">0</span>
+    </p>
   </footer>
 </body>
 

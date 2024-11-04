@@ -13,22 +13,59 @@ document.addEventListener("submit", (event) => {
   const id = document.getElementById('Number');
   const jobTitle = document.getElementById('jobTitle');
   const salary = document.getElementById('Income')
-  console.log(event);
-const tableBody = document.getElementById('tableBody');
-tableBody.innerHTML +=
-    `<tr>
-<td>${firstName.value}</td>
-<td>${lastName.value}</td>
-<td>${id.value}</td>
-<td>${jobTitle.value}</td>
-<td>${salary.value}</td>
-<td></td>
-</tr>`;
-form.reset()
+  console.log(id);
+  const tableBody = document.getElementById('tableBody');
+
+  //start creating a new element
+  const employeeRow = document.createElement("tr")
+  employeeRow.id = id.value;
+
+  //go through each of the elements in the form and append a new to to the employeeRow 
+  const firstNameCell = document.createElement("td");
+  firstNameCell.innerText = firstName.value;
+
+  const lastNameCell = document.createElement("td")
+  lastNameCell.innerText = lastName.value;
+
+  const idCell = document.createElement("td")
+  idCell.innerText = id.value
+
+  const jobTitleCell = document.createElement("td")
+  jobTitleCell.innerText = jobTitle.value
+
+  const salaryCell = document.createElement("td")
+  salaryCell.innerText = salary.value;
+
+  employeeRow.appendChild(firstNameCell);
+  employeeRow.appendChild(lastNameCell);
+  employeeRow.appendChild(idCell);
+  employeeRow.appendChild(jobTitleCell);
+  employeeRow.appendChild(salaryCell);
+  console.log(salaryCell);
+  employeeRow.appendChild(document.createElement("td"));
+  tableBody.appendChild(employeeRow);
+
+
+
+  // tableBody.innerHTML +=
+  //   `<tr id="${id}">
+  //     <td>${firstName.value}</td> 
+  //     <td>${lastName.value}</td>
+  //     <td>${id}</td>
+  //     <td>${jobTitle.value}</td>
+  //     <td>${salary.value}</td>
+  //     <td><button onclick="removeEmployee('${id}')">Delete</button></td>
+  // </tr>`;
+  form.reset()
   event.preventDefault();
-  debugger
 })
-//create function to add first name on click
+// I want to pass in the id of the row and then get the row for that id and remove it from the dom.
+function removeEmployee(id) {
+
+  const employeeRow = document.getElementById(id);
+  console.log(employeeRow);
+  employeeRow.remove();
+}
 // We actually want to create a function that add all the values inside the table 
 
 
