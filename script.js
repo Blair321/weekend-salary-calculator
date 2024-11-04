@@ -46,7 +46,7 @@ document.addEventListener("submit", (event) => {
   button.onclick = () => {
     employeeRow.remove();
   }
-  
+
   removeCell.appendChild(button);
 
 
@@ -64,8 +64,17 @@ document.addEventListener("submit", (event) => {
   monthlyCost.innerText = (newMonthlyCost);
   form.reset()
   event.preventDefault();
+// add css styling 
+if (newMonthlyCost > 20000) {
+const footer = document.querySelector("footer")
+  footer.classList.add("over-budget")
+}
+  
+
+
 })
-// I want to pass in the id of the row and then get the row for that id and remove it from the dom.
+// I want to pass in the id of the row and then get the row for that id and remove it from the dom
+
 function removeEmployee(id) {
 
   const employeeRow = document.getElementById(id);

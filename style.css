@@ -28,3 +28,5 @@ table {
   header {text-align: center;}
 
   footer {text-align: end;}
+
+  .over-budget {color: crimson;}
