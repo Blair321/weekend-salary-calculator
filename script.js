@@ -19,6 +19,7 @@ document.addEventListener("submit", (event) => {
   //start creating a new element
   const employeeRow = document.createElement("tr")
   employeeRow.id = id.value;
+  employeeRow.classList.add("employee-row");
 
   //go through each of the elements in the form and append a new to to the employeeRow 
   const firstNameCell = document.createElement("td");
@@ -34,28 +35,22 @@ document.addEventListener("submit", (event) => {
   jobTitleCell.innerText = jobTitle.value
 
   const salaryCell = document.createElement("td")
+  salaryCell.classList.add("salary");
   salaryCell.innerText = salary.value;
+  salaryCell.value = salary.value;
 
   employeeRow.appendChild(firstNameCell);
   employeeRow.appendChild(lastNameCell);
   employeeRow.appendChild(idCell);
   employeeRow.appendChild(jobTitleCell);
   employeeRow.appendChild(salaryCell);
-  console.log(salaryCell);
   employeeRow.appendChild(document.createElement("td"));
   tableBody.appendChild(employeeRow);
 
+  const monthlyCost = document.getElementById("total");
+  const newMonthlyCost = Number(monthlyCost.innerText) + (Number(salary.value) / 12);
 
-
-  // tableBody.innerHTML +=
-  //   `<tr id="${id}">
-  //     <td>${firstName.value}</td> 
-  //     <td>${lastName.value}</td>
-  //     <td>${id}</td>
-  //     <td>${jobTitle.value}</td>
-  //     <td>${salary.value}</td>
-  //     <td><button onclick="removeEmployee('${id}')">Delete</button></td>
-  // </tr>`;
+  monthlyCost.innerText = (newMonthlyCost);
   form.reset()
   event.preventDefault();
 })
