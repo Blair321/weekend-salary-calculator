@@ -66,10 +66,9 @@ document.addEventListener("submit", (event) => {
   event.preventDefault();
 // add css styling 
 if (newMonthlyCost > 20000) {
-const footer = document.querySelector("footer")
-  footer.classList.add("over-budget")
+monthlyCost.classList.add("over-budget")
+
 }
-  
 
 
 })
